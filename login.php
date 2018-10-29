@@ -1,3 +1,14 @@
+<?php
+if(!empty($_GET['sent'])){
+?>
+<div>
+    Your message was sent!
+</div>
+<?php
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +65,7 @@ if ($_POST){
         echo "ok";
         header('Location: loggedin.php');
     } else {
-        echo "error";
+        echo "Incorrect Email or Password ";
     }
 }
 $con->close();
@@ -64,11 +75,11 @@ $con->close();
 
 <h1>User Login</h1>
 
-    <form method="POST">
+    <form method="POST" action="send.php">
 
     <p align ="left"><b>
-    <label class="A">Email:  </label> <input type="text" size="25" id="ul" name="email" required placeholder = "Enter your email here."> <br><br>
-    <label class= "A">Password:  </label><input type="password"size="25"id="pl" name="password"required placeholder = "Enter your password here.">
+    <label class="A">Email:  </label> <input type="text" size="25" id="ul" name="email" required > <br><br>
+    <label class= "A">Password:  </label><input type="text"size="25"id="pl" name="password" required >
     </P></b>
 
     <br><center><input type="submit" name ="submit" value="Submit"></center></br>
